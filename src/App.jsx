@@ -1,30 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Navbar from './Navbar'
+import React, { useEffect, useState } from "react";
+import ArrowUpward from '@mui/icons-material/ArrowUpward';
+import "./App.css";
+import AboutPage from "./components/AboutPage";
+import HomePage from "./components/HomePage";
+import ProjectPage from "./components/ProjectPage";
+import SkillPage from "./components/SkillPage";
+import EducationPage from "./components/EducationPage";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [showBackToTopBtn, setShowBackToTopBtn] = useState(false);
 
+  const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop;
+    if (scrolled > 500) {
+      setShowBackToTopBtn(true);
+    } else if (scrolled <= 500) {
+      setShowBackToTopBtn(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", toggleVisible);
+  }, []);
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
   return (
     <>
-      <div>
-        <Navbar />
-        {
-          <div>
-            <a href="https://github.com/tijilparakh04" target="_blank">
-              <img src= "/github.png" className="logo" />
-            </a>
-            <a href="https://www.linkedin.com/in/tijil-parakh-bb7b2a253/" target="_blank">
-              <img src= "/linkedin.png" className="logo" />
-            </a>
-          </div>
-        }
-        <h1>Tijil Parakh</h1>
+      <div className="app-section" id="home">
+        <HomePage />
       </div>
+      <div className="app-section" id="about">
+        <AboutPage />
+      </div>
+      <div className="app-section" id="skills">
+        <SkillPage />
+      </div>
+      <div className="app-section" id="projects">
+        <ProjectPage />
+      </div>
+      <div className="app-section">
+        <EducationPage />
+      </div>
+      
     </>
-  )
+  );
 }
-
-export default App

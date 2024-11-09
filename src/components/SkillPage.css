@@ -1,0 +1,80 @@
+@media only screen and (max-width: 800px) {
+    .skill-header {
+      font-size: var(--section-heading-size-mobile) !important;
+    }
+    .skill-container {
+      flex-direction: column;
+    }
+    .skill-right,
+    .skill-left {
+      width: 100% !important;
+    }
+    .skill-left > p {
+      margin-bottom: 50px;
+    }
+  }
+  
+  .skill-container {
+    color: white;
+    display: flex;
+  }
+  
+  .skill-header {
+    font-size: var(--section-heading-size);
+    margin-bottom: 30px;
+    letter-spacing: var(--heading-letter-spacing);
+  }
+  
+  .skill-header > span {
+    color: var(--section-color);
+  }
+  
+  .skill-right {
+    opacity: 0.8;
+    color: white;
+    width: 60%;
+  }
+  
+  .skill-left {
+    width: 40%;
+    font-size: var(--section-sub-heading-size) !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  
+  .carousel-item {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .carousel-item a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .carousel-item div {
+    margin-bottom: 5px;
+  }
+  
+  .carousel-item div svg {
+    font-size: 40px; /* Adjust the icon size */
+  }
+  
+  
+  .slick-center .carousel-item a {
+    font-size: 3rem;
+    color: var(--section-color);
+  }
+  
+  .slick-slide {
+    filter: blur(2px);
+    transition: filter 0.5s ease;
+  }
+  
+  .slick-center {
+    filter: blur(0);
+  }
+  
